@@ -1,6 +1,11 @@
-<h1>Angular Lesson 2 Practice: User Input</h1>
-
-<div class="container">
-    <movie-list></movie-list>
-</div>
+<div class='movies col-4'>
+    <h3>Movies to Watch</h3>
+    <ol>
+       <li *ngFor ="let movie of movies">{{movie}}</li>
+    </ol>
+    <hr>
+    <input #newMovie (keyup.enter) = 'addMovie(newMovie.value); newMovie.value= ""' type = 'text' placeholder = "Enter Movie Title Here:"/>
+    <button (click) = 'addMovie(newMovie.value); newMovie.value=''"> Add Movie</button>
+    <p>{{newMovie.value}}</p>
+ </div>
 
